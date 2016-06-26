@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="angularApp">
+    <head>
+        <title>ITV Content Browsing</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="app.css">    
+        <!-- load angular via CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.1/angular-route.min.js"></script>
+        <script src="app.js"></script>
+        <script src="app-controllers.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">ITV</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/cathegories"><i class="fa fa-home"></i> Cathegories</a></li>
+                        <li><a href="#/channels">Channels</a></li>
+                        <li><a href="#/mostpopular">Most Popular</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+              <div ng-view></div>        
+        </div>
+    </div>
+</body>
+</html>
