@@ -11,7 +11,8 @@ angularApp.service('getUrl', function() {
     Factual: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Factual&broadcaster=itv',
     Films: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Films&broadcaster=itv',
     News: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=News&broadcaster=itv',
-    Sport: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Sport&broadcaster=itv'
+    Sport: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Sport&broadcaster=itv',
+    MostPopular: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=popular&size=15&broadcaster=ITV'
   };
 
   this.map = function(type) {

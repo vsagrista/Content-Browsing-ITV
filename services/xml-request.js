@@ -1,7 +1,4 @@
 angularApp.service('XMLHttpRequest', function($http) {
-  this.run = function() {
-  	console.log('hello');
-  }; 
   this.request = function(url) {
 	  return $http.get(url, { 
   	  headers: {
@@ -10,12 +7,5 @@ angularApp.service('XMLHttpRequest', function($http) {
 	  }).then(function(response){
 	  	return response.data._embedded.productions;
 	  });
-	  // .success(function(data){
-
-	  // 	return data
-	  // })
-	  // .error(function(data){
-	  // 	console.log(data);
-	  // });	
   };
 });

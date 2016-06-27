@@ -24,13 +24,8 @@ angularApp.config(function($routeProvider){
   .when('/channels', {
     templateUrl: 'templates/channels.html',
     controller: 'channelsCtrl'
-  })
-
-
-  .when('/mostpopular', {
-    templateUrl: 'templates/most-popular.html',
-    controller: 'mostPopularCtrl'
   });
+  
 });
 
 
