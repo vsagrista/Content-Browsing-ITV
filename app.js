@@ -9,18 +9,19 @@ angularApp.config(function($routeProvider){
     templateUrl: 'templates/main.html',
     controller: 'mainCtrl'
   })
+ 
+  .when('/categories', {
+    templateUrl: 'templates/categories.html',
+    controller: 'categoriesCtrl'
+  })
 
   .when('/channels', {
     templateUrl: 'templates/channels.html',
     controller: 'channelsCtrl'
   })
 
-  .when('/cathegories', {
-    templateUrl: 'templates/cathegories.html',
-    controller: 'cathegoriesCtrl'
-  })
 
-  .when('/mostpopular/:number', {
+  .when('/mostpopular', {
     templateUrl: 'templates/most-popular.html',
     controller: 'mostPopularCtrl'
   });
