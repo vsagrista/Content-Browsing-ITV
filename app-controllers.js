@@ -44,27 +44,12 @@ angularApp.controller('categoriesCtrl', ['$scope', '$routeParams', 'XMLHttpReque
   console.log('categories');
 }]);
 
-
-angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', '$interval', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, $interval){
+angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
   $scope.choice =  $routeParams.choice;
   $scope.contents = [];
- 
   XMLHttpRequest.request(getUrl.map($scope.choice)).then(function(response){
-    console.log('data',response)
-    $scope.buildObject(response);
+    buildObjArr.run($scope.contents, response);
   });
-  
-  $scope.buildObject = function(response){
-    response.forEach(
-      function(content){
-        console.log(content._embedded.programme.title);
-        console.log(content._links.image.href);
-        $scope.contents.push({
-          image: content._links.image.href.slice(7, content._links.image.href.length), // http:// is repeated for some reason,
-          name: content._embedded.programme.title
-        });
-      });
-  };
 }]);
 
 angularApp.controller('channelsCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', function($scope, $routeParams, XMLHttpRequest, mySelection){
