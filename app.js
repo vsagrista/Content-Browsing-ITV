@@ -14,6 +14,12 @@ angularApp.config(function($routeProvider){
     templateUrl: 'templates/categories.html',
     controller: 'categoriesCtrl'
   })
+  
+  .when('/categories/content/:choice', {
+    templateUrl: 'templates/choices.html',
+    controller: 'choicesCtrl'
+  })
+
 
   .when('/channels', {
     templateUrl: 'templates/channels.html',

@@ -6,5 +6,5 @@ angularApp.service('mySelection', function() {
   };
   this.logContent = function(){
   	console.log(self.selectedContent);
-  }
+  };
 });

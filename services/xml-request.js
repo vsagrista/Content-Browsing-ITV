@@ -3,18 +3,19 @@ angularApp.service('XMLHttpRequest', function($http) {
   	console.log('hello');
   }; 
   this.request = function(url) {
-	  $http.get(url, { 
+	  return $http.get(url, { 
   	  headers: {
   	  	Accept : 'application/vnd.itv.hubsvc.production.v3+hal+json; charset=UTF-8'
       }
-	  })
-	  .success(function(data){
-	  	console.log(data._embedded.productions);
-	  	return true
-	  })
-	  .error(function(data){
-	  	console.log(data);
-	  });	
+	  }).then(function(response){
+	  	return response.data._embedded.productions;
+	  });
+	  // .success(function(data){
+
+	  // 	return data
+	  // })
+	  // .error(function(data){
+	  // 	console.log(data);
+	  // });	
   };
-  
 });
