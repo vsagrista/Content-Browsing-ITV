@@ -5,3 +5,17 @@ html, body {
 .content-img {
 	max-width: 100%;
 }
+
+.channel {
+	border: 1px solid #2196F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+.channelImg {
+	width: 150px;
+  height: 150px;
+}

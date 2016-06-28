@@ -1,6 +1,9 @@
 <div class="col-md-3">
   <div class="content-wrapper">
-	  <img class="content-img" src="{{contentObject.image}}">
-    <a href="#/categories/content/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a>  	  	
+    <a ng-show="channelsVariable" ng-class="{ channel: channelsVariable }" href="#/categories/content/{{contentObject.name.toLowerCase();}}">
+	    <img class="content-img" ng-class="{ channelImg: channelsVariable }" src="{{contentObject.image}}">
+	  </a>
+	  <img class="content-img" ng-hide="channelsVariable" src="{{contentObject.image}}">
+    <a ng-hide="channelsVariable" href="#/categories/content/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a>  	  	
   </div>
 </div>

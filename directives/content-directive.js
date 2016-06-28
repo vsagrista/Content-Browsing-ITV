@@ -4,7 +4,7 @@ angularApp.directive('contentDirective', function(){
     replace: true,
     scope: {
     	contentObject: '=',
-    	formattedAddressFunction: '&'
+    	channelsVariable: '='
     }
   };
 });
