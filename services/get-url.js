@@ -38,6 +38,14 @@ angularApp.service('getUrl', function() {
   	}
   };
 
+  this.getImageUrl = function(currentCategory) {
+    var imgUrl = this.categories[3].image;
+    this.categories.forEach(function(category){
+     if (category.name.toLowerCase() === currentCategory.toLowerCase()) imgUrl =  category.image;
+    });
+    return imgUrl;
+  };
+
   this.run = function(){
     console.log('running');
   };

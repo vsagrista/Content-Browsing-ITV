@@ -6,7 +6,7 @@
     href="#/categories/content/{{contentObject.name.toLowerCase();}}">
 	    <img class="content-img" ng-class="{ channelImg: channelsVariable }" src="{{contentObject.image}}">
 	  </a>
-	  <img class="content-img" ng-hide="channelsVariable" src="{{contentObject.image}}">
+	  <img class="content-img" ng-hide="channelsVariable || episodeVariable" src="{{contentObject.image}}">
     
     <!-- Categories -->
     <a ng-show="categoriesVariable" href="#/categories/content/{{contentObject.name.toLowerCase();}}" ng-click="getEpisodesFunction({episode: contentObject.name})" class="content-name">{{contentObject.name}}</a> 
@@ -14,9 +14,14 @@
     <!--  Choice   -->     
     <a ng-show="choiceVariable" href="#/categories/content/{{choiceVariable}}/episodes/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a>   
 
-    <!--  Episode   -->     
-    <a ng-show="episodeVariable" href="#/categories/content/{{choiceVariable}}/episodes/{{contentObject.name.toLowerCase();}}" class="content-name">Welcome to episodes</a>  
-
+    <!--  Episode   -->  
+    <div ng-show="episodeVariable">
+      <img class="content-img" src="{{contentObject.image}}">
+	    <a  href="#" class="content-name">{{contentObject.name}}</a>  
+	    <!-- <div class="video-wrapper">
+	      <iframe src="https://player.vimeo.com/video/50872925" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p>Watching Something</p>
+	    </div> -->
+		</div>   
 
   </div>
 </div>

@@ -3,7 +3,6 @@
 angularApp.controller('mainCtrl', ['$scope', 'XMLHttpRequest', 'mySelection', function($scope, XMLHttpRequest, mySelection){
 	$scope.main = 'Recently Seen';
   $scope.selectedContent = mySelection.selectedContent.length > 0 ? mySelection.selectedContent.length : 'You have not seen anything yet!';
-  console.log('main');
 }]);
 
 angularApp.controller('categoriesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
@@ -20,18 +19,18 @@ angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest'
 }]);
 
 angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
-  console.log('Episodes controller!');
   $scope.episode =  $routeParams.episode;
   $scope.choice = $routeParams.choice;
-  
-  console.log($scope.episode, $routeParams.choice);
-
+  $scope.contents = [];
+  for(var i = 0; i < 9; i++) $scope.contents.push({ 
+    image: getUrl.getImageUrl($scope.choice),
+    name: $scope.episode + ': episode '+ i
+  });
 }]);
 
 angularApp.controller('channelsCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
-  $scope.channels = 'Hello from Channels'; 
+  $scope.channels = 'Channels'; 
   $scope.contents = getUrl.channels;
-  $scope.channels = true;
   console.log('Channels');
 }]);
 
