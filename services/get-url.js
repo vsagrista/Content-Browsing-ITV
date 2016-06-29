@@ -46,8 +46,4 @@ angularApp.service('getUrl', function() {
     return imgUrl;
   };
 
-  this.run = function(){
-    console.log('running');
-  };
- 
 });

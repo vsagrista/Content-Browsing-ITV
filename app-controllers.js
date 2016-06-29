@@ -22,22 +22,23 @@ angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest
   $scope.episode =  $routeParams.episode;
   $scope.choice = $routeParams.choice;
   $scope.contents = [];
+  String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  };
   for(var i = 0; i < 9; i++) $scope.contents.push({ 
     image: getUrl.getImageUrl($scope.choice),
-    name: $scope.episode + ': episode '+ i
-  });
+    name: $scope.episode.capitalize() + ': episode '+ (i+1)
+  }); 
 }]);
 
 angularApp.controller('playerCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
-  $scope.player = 'Player';
+  $scope.player = 'Playing ' + $scope.content;
   $scope.content = $routeParams.content;
 }]);
-
 
 angularApp.controller('channelsCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
   $scope.channels = 'Channels'; 
   $scope.contents = getUrl.channels;
-  console.log('Channels');
 }]);
 
 
