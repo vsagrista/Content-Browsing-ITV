@@ -28,6 +28,12 @@ angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest
   });
 }]);
 
+angularApp.controller('playerCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
+  $scope.player = 'Player';
+  $scope.content = $routeParams.content;
+}]);
+
+
 angularApp.controller('channelsCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
   $scope.channels = 'Channels'; 
   $scope.contents = getUrl.channels;

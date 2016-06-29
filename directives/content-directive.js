@@ -8,6 +8,7 @@ angularApp.directive('contentDirective', function(){
     	choiceVariable: '=',
     	channelsVariable: '=',
     	episodeVariable: '=',
+    	playerVariable: '=',
     	getEpisodesFunction: '&'
     }
   };
