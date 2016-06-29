@@ -13,16 +13,17 @@ angularApp.controller('categoriesCtrl', ['$scope', '$routeParams', 'XMLHttpReque
 
 angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
   $scope.choice =  $routeParams.choice;
-  //console.log($scope.choice);
-  $scope.episode = 'hello';
-  $scope.getEpisodes = function(episode){
-    console.log('getting episodes...', episode);
-  };
   $scope.contents = [];
   XMLHttpRequest.request(getUrl.map($scope.choice)).then(function(response){
     buildObjArr.run($scope.contents, response);
   });
 }]);
+
+angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
+  console.log('Episodes controller!');
+}]);
+
+
 
 angularApp.controller('channelsCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
   $scope.channels = 'Hello from Channels'; 

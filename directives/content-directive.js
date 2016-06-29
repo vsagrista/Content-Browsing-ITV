@@ -4,6 +4,8 @@ angularApp.directive('contentDirective', function(){
     replace: true,
     scope: {
     	contentObject: '=',
+    	categoriesVariable: '=',
+    	choiceVariable: '=',
     	channelsVariable: '=',
     	episodeVariable: '=',
     	getEpisodesFunction: '&'

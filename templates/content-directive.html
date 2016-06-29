@@ -1,10 +1,19 @@
 <div class="col-md-3">
   <div class="content-wrapper">
+
+    <!-- Channel -->
     <a ng-show="channelsVariable" ng-class="{ channel: channelsVariable }" 
     href="#/categories/content/{{contentObject.name.toLowerCase();}}">
 	    <img class="content-img" ng-class="{ channelImg: channelsVariable }" src="{{contentObject.image}}">
 	  </a>
 	  <img class="content-img" ng-hide="channelsVariable" src="{{contentObject.image}}">
-    <a ng-hide="channelsVariable" href="#/categories/content/{{contentObject.name.toLowerCase();}}" ng-click="getEpisodesFunction({episode: contentObject.name})" class="content-name">{{contentObject.name}}</a>  	  	
+    
+    <!-- Categories -->
+    <a ng-show="categoriesVariable" href="#/categories/content/{{contentObject.name.toLowerCase();}}" ng-click="getEpisodesFunction({episode: contentObject.name})" class="content-name">{{contentObject.name}}</a> 
+
+    <!--  Choice   -->     
+    <a ng-show="choiceVariable" href="#/categories/content/episodes/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a>   
+
+
   </div>
 </div>
