@@ -4,7 +4,9 @@ angularApp.directive('contentDirective', function(){
     replace: true,
     scope: {
     	contentObject: '=',
-    	channelsVariable: '='
+    	channelsVariable: '=',
+    	episodeVariable: '=',
+    	getEpisodesFunction: '&'
     }
   };
 });
