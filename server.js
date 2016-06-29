@@ -4,7 +4,7 @@ var express = require('express'),
 app.use(express.static(__dirname)); 
  
 app.all('*', function(req, res) {
-  res.sendfile('index.html', {root:'static'}); 
+  res.sendFile('index.html'); 
 });
  
 if(require.main === module){
