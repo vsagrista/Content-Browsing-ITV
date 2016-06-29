@@ -1,5 +1,6 @@
 {
 	"scripts": {
-	  "test": "./node_modules/protractor/bin/protractor protractor.config.js"
+	  "test": "./node_modules/protractor/bin/protractor protractor.config.js",
+	  "start": "node server.js"
 	}
 }
