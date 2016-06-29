@@ -5,7 +5,7 @@
 3. $ ./node_modules/protractor/bin/webdriver-manager update  // updates the chrome driver
 
 ## Now you can test:
-   $ npm test
+  $ npm test
 
 ## To browse on the app:
 1. $ npm start
