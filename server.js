@@ -7,4 +7,8 @@ app.all('*', function(req, res) {
   res.sendfile('index.html', {root:'static'}); 
 });
  
-app.listen(process.env.PORT ||3000);
+if(require.main === module){
+  app.listen(process.env.PORT ||3000); 
+} else {
+  module.exports = app; 
+}
