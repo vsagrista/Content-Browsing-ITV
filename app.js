@@ -20,7 +20,7 @@ angularApp.config(function($routeProvider){
     controller: 'choicesCtrl'
   })
 
-  .when('/categories/content/episodes/:episode', {
+  .when('/categories/content/:choice/episodes/:episode', {
     templateUrl: 'templates/episodes.html',
     controller: 'episodesCtrl'
   })

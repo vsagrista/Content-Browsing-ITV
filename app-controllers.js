@@ -21,9 +21,12 @@ angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest'
 
 angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
   console.log('Episodes controller!');
+  $scope.episode =  $routeParams.episode;
+  $scope.choice = $routeParams.choice;
+  
+  console.log($scope.episode, $routeParams.choice);
+
 }]);
-
-
 
 angularApp.controller('channelsCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
   $scope.channels = 'Hello from Channels'; 

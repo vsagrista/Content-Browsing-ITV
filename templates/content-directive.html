@@ -12,7 +12,10 @@
     <a ng-show="categoriesVariable" href="#/categories/content/{{contentObject.name.toLowerCase();}}" ng-click="getEpisodesFunction({episode: contentObject.name})" class="content-name">{{contentObject.name}}</a> 
 
     <!--  Choice   -->     
-    <a ng-show="choiceVariable" href="#/categories/content/episodes/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a>   
+    <a ng-show="choiceVariable" href="#/categories/content/{{choiceVariable}}/episodes/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a>   
+
+    <!--  Episode   -->     
+    <a ng-show="episodeVariable" href="#/categories/content/{{choiceVariable}}/episodes/{{contentObject.name.toLowerCase();}}" class="content-name">Welcome to episodes</a>  
 
 
   </div>
