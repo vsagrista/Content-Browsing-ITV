@@ -1,7 +1,7 @@
 // CONTROLLERS
 
 angularApp.controller('mainCtrl', ['$scope', 'XMLHttpRequest', 'mySelection', function($scope, XMLHttpRequest, mySelection){
-	$scope.main = 'Recently Seen';
+  $scope.main = 'Recently Seen';
   $scope.selectedContent = mySelection.selectedContent.length > 0 ? mySelection.selectedContent.length : 'You have not seen anything yet!';
 }]);
 
@@ -31,8 +31,9 @@ angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest
   }); 
 }]);
 
-angularApp.controller('playerCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
+angularApp.controller('playerCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', '$sce', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr, $sce){
   $scope.player = 'Playing ' + $scope.content;
+  $scope.videoUrl = $sce.trustAsResourceUrl('https://player.vimeo.com/video/50872925?autoplay=1');
   $scope.content = $routeParams.content;
 }]);
 
