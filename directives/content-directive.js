@@ -11,6 +11,7 @@ angularApp.directive('contentDirective', function(){
     	episodeVariable: '=',
     	playerVariable: '=',
       videoUrlVariable: '=',
+      contentsRenderedFunction: '&',
       saveInMySelectionFunction: '&'
     }
   };
