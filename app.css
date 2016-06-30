@@ -2,6 +2,11 @@ html, body {
   font-size: 1.1em;
 }
 
+a {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .content-img {
 	max-width: 100%;
 }
@@ -18,4 +23,40 @@ html, body {
 .channelImg {
 	width: 150px;
   height: 150px;
+}
+
+.video-wrapper > p {
+    position: relative;
+    font-family: monospace;
+    background-color: black;
+    text-decoration: none;
+    color: #03A9F4;
+    font-size: 1.5em;
+    width:640px;
+    margin: 0 auto;
+}
+ 
+.cursor {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: black;
+    box-sizing: border-box;
+    
+    -webkit-animation: typing 2s steps(20, end) infinite;
+    animation: typing 2s steps(20, end) infinite;
+}
+
+@-webkit-keyframes typing {
+    from,to { width: 100%; }
+    25% { width: 0; }
+    50% { width: 0; }
+    75% { width: 100%; }
+}
+
+@keyframes typing {
+    from { width: 100%; }
+    to { width: 0; }
 }

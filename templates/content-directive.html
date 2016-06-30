@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div ng-class="{'col-md-3': !videoUrlVariable, 'video-wrapper text-center': videoUrlVariable}">
   <div class="content-wrapper">
 
     <!-- Channel -->
@@ -25,6 +25,7 @@
 		<!-- Player -->
     <div class="video-wrapper" ng-show="playerVariable">
 	    <iframe ng-src="{{videoUrlVariable}}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+      <p>This is just a sample video <span class="cursor"> </span></p>
 	  </div>
 
   </div>
