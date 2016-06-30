@@ -19,7 +19,8 @@
     <!--  Episode   -->  
     <div ng-show="episodeVariable">
       <img class="content-img" src="{{contentObject.image}}">
-	    <a  href="#/play/{{contentObject.name}}" class="content-name">{{contentObject.name}}</a>  
+	    <a  href="#/play/{{contentObject.name}}"  class="content-name" ng-click="saveInMySelectionFunction({name: contentObject.name, image: contentObject.image})">{{contentObject.name}}</a> 
+      <button >HEre</button> 
 		</div>   
 
 		<!-- Player -->

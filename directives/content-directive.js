@@ -10,7 +10,8 @@ angularApp.directive('contentDirective', function(){
     	episodeVariable: '=',
     	playerVariable: '=',
         videoUrlVariable: '=',
-    	getEpisodesFunction: '&'
+    	getEpisodesFunction: '&',
+        saveInMySelectionFunction: '&'
     }
   };
 });

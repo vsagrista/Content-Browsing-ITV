@@ -22,6 +22,10 @@ angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest
   $scope.episode =  $routeParams.episode;
   $scope.choice = $routeParams.choice;
   $scope.contents = [];
+  console.log('episodes');
+  $scope.saveInMySelection = function(name, image){
+    console.log('fired', name, image);
+  };
   String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
