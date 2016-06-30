@@ -2,13 +2,12 @@
 
 angularApp.controller('mainCtrl', ['$scope', 'XMLHttpRequest', 'mySelection', function($scope, XMLHttpRequest, mySelection){
   $scope.main = 'Recently Seen';
-  console.log('main', mySelection.selectedContent);
   $scope.contents = mySelection.selectedContent;
   $scope.nothingSelected = mySelection.selectedContent.length > 0 ? '' : 'You have not seen anything yet!';
 }]);
 
 angularApp.controller('categoriesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
-  $scope.categories = 'Hello from categories'; 
+  $scope.categories = 'Choose a category'; 
   $scope.contents = getUrl.categories;
 }]);
 
@@ -46,6 +45,9 @@ angularApp.controller('playerCtrl', ['$scope', '$routeParams', 'XMLHttpRequest',
 }]);
 
 angularApp.controller('channelsCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
+  $scope.saveInMySelection = function(name, image){
+    mySelection.addToSelected(name,image);
+  };
   $scope.channels = 'Channels'; 
   $scope.contents = getUrl.channels;
 }]);

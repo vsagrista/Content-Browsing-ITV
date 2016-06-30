@@ -3,11 +3,11 @@
 
     <!-- Channel -->
     <a ng-show="channelsVariable" ng-class="{ channel: channelsVariable }" 
-    href="#/categories/content/{{contentObject.name.toLowerCase();}}">
+    href="#/play/{{contentObject.name}}" ng-click="saveInMySelectionFunction({name: contentObject.name, image: contentObject.image})">
 	    <img class="content-img" ng-class="{ channelImg: channelsVariable }" src="{{contentObject.image}}">
 	  </a>
 
-	  <!-- shared -->
+	  <!-- Shared all controllers -->
 	  <img class="content-img" ng-hide="channelsVariable || episodeVariable" src="{{contentObject.image}}">
 
     <!-- Main -->

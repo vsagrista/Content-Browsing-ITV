@@ -1,17 +1,17 @@
 angularApp.directive('contentDirective', function(){
-	return {
+  return {
     templateUrl: 'templates/content-directive.html',
     replace: true,
     scope: {
-        mainVariable: '=',
-        contentObject: '=',
+      mainVariable: '=',
+      contentObject: '=',
     	categoriesVariable: '=',
     	choiceVariable: '=',
     	channelsVariable: '=',
     	episodeVariable: '=',
     	playerVariable: '=',
-        videoUrlVariable: '=',
-        saveInMySelectionFunction: '&'
+      videoUrlVariable: '=',
+      saveInMySelectionFunction: '&'
     }
   };
 });

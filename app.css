@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poiret One', cursive;
+}
+
 html, body {
   font-size: 1.1em;
 }
