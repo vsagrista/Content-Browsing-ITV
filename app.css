@@ -12,6 +12,16 @@ a {
   overflow: hidden;
 }
 
+.logo-home-link {
+  width: 100px;
+  height: 50px;
+}
+
+.logo-home-link > img {
+  position: relative;
+  margin-top: -8px;
+}
+
 .content-img {
 	max-width: 100%;
 }

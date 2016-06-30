@@ -3,7 +3,7 @@ angularApp.service('getUrl', function() {
   var urls = {
   	Children: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Children&broadcaster=itv',
   	Comedies: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Comedy&broadcaster=itv',
-  	'Drama & Soups': 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Drama+%26+Soaps&broadcaster=itv',
+  	'Drama and Soups': 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Drama+%26+Soaps&broadcaster=itv',
     Entertainment: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Entertainment&broadcaster=itv',
     Factual: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Factual&broadcaster=itv',
     Films: 'http://fetd.prod.cps.awseuwest1.itvcloud.zone/platform/itvonline/samsung/productions?grouping=latestPerProgramme&category=Films&broadcaster=itv',
@@ -33,6 +33,7 @@ angularApp.service('getUrl', function() {
   ];
 
   this.map = function(type) {
+    console.log(type);
   	for (var prop in urls) {
   		if (prop.toLowerCase() === type.toLowerCase()) return urls[prop];
   	}
