@@ -19,7 +19,7 @@ angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest'
   });
 }]);
 
-angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
+angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', 'loaderFunctions', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr, loaderFunctions){
   $scope.episode =  $routeParams.episode;
   $scope.choice = $routeParams.choice;
   $scope.contents = [];
@@ -40,22 +40,26 @@ angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest
     });
   }; 
 
+  // $scope.contentsRendered = function(){
+  //   $scope.removeLoader();
+  // };
+
+  // $scope.showLoader = function() {    
+  //   document.getElementsByClassName('activate')[0].className += ' ' + 'loader';
+  // };
+
+  // $scope.removeLoader = function() { 
+  //   document.getElementsByClassName('activate')[0].classList.remove('loader');
+  // };
+
   $scope.contentsRendered = function(){
-    $scope.removeLoader();
+    loaderFunctions.removeLoader();
   };
 
-  $scope.showLoader = function() {    
-    document.getElementsByClassName('activate')[0].className += ' ' + 'loader';
-  };
 
-  $scope.removeLoader = function() { 
-    document.getElementsByClassName('activate')[0].classList.remove('loader');
-  };
 
-   
-   //$scope.removeLoader();
   $scope.prepareContents();
-  $scope.showLoader();
+  loaderFunctions.showLoader();
 }]);
 
 
