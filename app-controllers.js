@@ -2,7 +2,9 @@
 
 angularApp.controller('mainCtrl', ['$scope', 'XMLHttpRequest', 'mySelection', function($scope, XMLHttpRequest, mySelection){
   $scope.main = 'Recently Seen';
-  $scope.selectedContent = mySelection.selectedContent.length > 0 ? mySelection.selectedContent.length : 'You have not seen anything yet!';
+  console.log('main', mySelection.selectedContent);
+  $scope.contents = mySelection.selectedContent;
+  $scope.nothingSelected = mySelection.selectedContent.length > 0 ? '' : 'You have not seen anything yet!';
 }]);
 
 angularApp.controller('categoriesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
@@ -22,13 +24,15 @@ angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest
   $scope.episode =  $routeParams.episode;
   $scope.choice = $routeParams.choice;
   $scope.contents = [];
-  console.log('episodes');
+
   $scope.saveInMySelection = function(name, image){
-    console.log('fired', name, image);
+    mySelection.addToSelected(name,image);
   };
+
   String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
+
   for(var i = 0; i < 9; i++) $scope.contents.push({ 
     image: getUrl.getImageUrl($scope.choice),
     name: $scope.episode.capitalize() + ': episode '+ (i+1)

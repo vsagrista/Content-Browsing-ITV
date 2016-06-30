@@ -9,9 +9,12 @@
 
 	  <!-- shared -->
 	  <img class="content-img" ng-hide="channelsVariable || episodeVariable" src="{{contentObject.image}}">
+
+    <!-- Main -->
+    <a ng-show="mainVariable" href="#/play/{{contentObject.name;}}" class="content-name">{{contentObject.name}}</a> 
     
     <!-- Categories -->
-    <a ng-show="categoriesVariable" href="#/categories/content/{{contentObject.name.toLowerCase();}}" ng-click="getEpisodesFunction({episode: contentObject.name})" class="content-name">{{contentObject.name}}</a> 
+    <a ng-show="categoriesVariable" href="#/categories/content/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a> 
 
     <!--  Choice   -->     
     <a ng-show="choiceVariable" href="#/categories/content/{{choiceVariable}}/episodes/{{contentObject.name.toLowerCase();}}" class="content-name">{{contentObject.name}}</a>   
@@ -20,7 +23,6 @@
     <div ng-show="episodeVariable">
       <img class="content-img" src="{{contentObject.image}}">
 	    <a  href="#/play/{{contentObject.name}}"  class="content-name" ng-click="saveInMySelectionFunction({name: contentObject.name, image: contentObject.image})">{{contentObject.name}}</a> 
-      <button >HEre</button> 
 		</div>   
 
 		<!-- Player -->

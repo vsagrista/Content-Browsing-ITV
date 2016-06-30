@@ -3,14 +3,14 @@ angularApp.directive('contentDirective', function(){
     templateUrl: 'templates/content-directive.html',
     replace: true,
     scope: {
-    	contentObject: '=',
+        mainVariable: '=',
+        contentObject: '=',
     	categoriesVariable: '=',
     	choiceVariable: '=',
     	channelsVariable: '=',
     	episodeVariable: '=',
     	playerVariable: '=',
         videoUrlVariable: '=',
-    	getEpisodesFunction: '&',
         saveInMySelectionFunction: '&'
     }
   };
