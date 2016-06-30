@@ -1,6 +1,7 @@
 <h1>{{ categories }}</h1>
 <div class="container">
 	<div class="row">
-    <content-directive ng-repeat="content in contents" content-object="content" categories-variable="categories"></content-directive>
+	  <div class="activate"></div>
+    <content-directive ng-repeat="content in contents" content-object="content" categories-variable="categories" ng-init="$last && contentsRendered()"></content-directive>
 	</div>
 </div>

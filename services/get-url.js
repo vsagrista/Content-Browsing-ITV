@@ -33,7 +33,6 @@ angularApp.service('getUrl', function() {
   ];
 
   this.map = function(type) {
-    console.log(type);
   	for (var prop in urls) {
   		if (prop.toLowerCase() === type.toLowerCase()) return urls[prop];
   	}

@@ -7,7 +7,4 @@ angularApp.service('mySelection', function() {
   		image: image
   	});
   };
-  this.logContent = function(){
-  	console.log(self.selectedContent);
-  };
 });

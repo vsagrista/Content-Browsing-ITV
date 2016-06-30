@@ -6,17 +6,25 @@ angularApp.controller('mainCtrl', ['$scope', 'XMLHttpRequest', 'mySelection', fu
   $scope.nothingSelected = mySelection.selectedContent.length > 0 ? '' : 'You have not seen anything yet!';
 }]);
 
-angularApp.controller('categoriesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl){
+angularApp.controller('categoriesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'loaderFunctions', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, loaderFunctions){
   $scope.categories = 'Choose a category'; 
   $scope.contents = getUrl.categories;
+  $scope.contentsRendered = function(){
+    loaderFunctions.removeLoader();
+  };
+  loaderFunctions.showLoader();
 }]);
 
-angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr){
+angularApp.controller('choicesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', 'loaderFunctions', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr, loaderFunctions){
   $scope.choice =  $routeParams.choice;
   $scope.contents = [];
   XMLHttpRequest.request(getUrl.map($scope.choice)).then(function(response){
     buildObjArr.run($scope.contents, response);
   });
+  $scope.contentsRendered = function(){
+    loaderFunctions.removeLoader();
+  };
+  loaderFunctions.showLoader();
 }]);
 
 angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest', 'mySelection', 'getUrl', 'buildObjArr', 'loaderFunctions', function($scope, $routeParams, XMLHttpRequest, mySelection, getUrl, buildObjArr, loaderFunctions){
@@ -33,30 +41,15 @@ angularApp.controller('episodesCtrl', ['$scope', '$routeParams', 'XMLHttpRequest
   };
  
   $scope.prepareContents = function() {
-    console.log('triggered')
     for(var i = 0; i < 9; i++) $scope.contents.push({ 
       image: getUrl.getImageUrl($scope.choice),
       name: $scope.episode.capitalize() + ': episode '+ (i+1)
     });
   }; 
 
-  // $scope.contentsRendered = function(){
-  //   $scope.removeLoader();
-  // };
-
-  // $scope.showLoader = function() {    
-  //   document.getElementsByClassName('activate')[0].className += ' ' + 'loader';
-  // };
-
-  // $scope.removeLoader = function() { 
-  //   document.getElementsByClassName('activate')[0].classList.remove('loader');
-  // };
-
   $scope.contentsRendered = function(){
     loaderFunctions.removeLoader();
   };
-
-
 
   $scope.prepareContents();
   loaderFunctions.showLoader();

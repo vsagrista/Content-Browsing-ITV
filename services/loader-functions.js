@@ -1,5 +1,6 @@
 angularApp.service('loaderFunctions', function() {
-	this.showLoader = function() {    
+	
+	this.showLoader = function() { 
     document.getElementsByClassName('activate')[0].className += ' ' + 'loader';
   };
 
