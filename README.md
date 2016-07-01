@@ -1,8 +1,9 @@
 # Content-Browsing-ITV
 ## Setting up the testing enviroment:
-1. $ npm install protractor --save-dev
-2. $ npm install mocha expect.js --save-dev
-3. $ ./node_modules/protractor/bin/webdriver-manager update  // updates the chrome driver
+1. cd to file
+2. $ npm install protractor --save-dev
+3. $ npm install mocha expect.js --save-dev
+4. $ ./node_modules/protractor/bin/webdriver-manager update  // updates the chrome driver
 
 ## Now you can test:
   $ npm test
