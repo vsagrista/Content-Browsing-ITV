@@ -1,5 +1,5 @@
 // To debug use browser.pause()
-
+require('events').EventEmitter.defaultMaxListeners = Infinity; // avoids a node bug
 var expect = require('expect.js');
 describe('Test',function() {
   it('should succeed',function() {
@@ -25,14 +25,14 @@ describe('Navbar Browsing', function(){
     }); 
      element.all(by.tagName('a')).get(1).click();
      element(by.xpath('//h1')).getText().then(function(text) { 
-      expect(text).to.be('Hello from categories'); 
+      expect(text).to.be('Choose a category'); 
     });
     element.all(by.tagName('a')).get(2).click();
-     element(by.xpath('//h1')).getText().then(function(text) { 
+    element(by.xpath('//h1')).getText().then(function(text) { 
       expect(text).to.be('Channels'); 
     }); 
     element.all(by.tagName('a')).get(3).click();
-     element(by.xpath('//h1')).getText().then(function(text) { 
+    element(by.xpath('//h1')).getText().then(function(text) { 
       expect(text).to.be('Displaying mostpopular'); 
     });  
   }); 
@@ -41,14 +41,16 @@ describe('Navbar Browsing', function(){
 describe("Categories and children's Category Page", function(){ 
   it("should contain categories and browse to children's section", function() { 
     browser.get('/#categories');
-      element(by.xpath('//h1')).getText().then(function(text) { 
-        expect(text).to.be('Hello from categories'); 
-      }); 
-      	
-      element.all(by.css('.content-name')).get(0).click();
-      element(by.xpath('//h1')).getText().then(function(text) { 
-        expect(text).to.be('Displaying children'); 
-      }); 
+    browser.waitForAngular();
+    element(by.xpath('//h1')).getText().then(function(text) { 
+      expect(text).to.be('Choose a category'); 
+    });  
+    browser.get('/#categories/content/children');
+    browser.waitForAngular();
+    element(by.xpath('//h1')).getText().then(function(text) { 
+      expect(text).to.be('Displaying children');    
+    });
   }); 
 });
+
 
